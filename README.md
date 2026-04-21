@@ -78,7 +78,7 @@ All analyses are performed within a single graphical user interface. The applica
 
 ### Windows — Installer
 
-1. Download **[HABITUS_Setup_v1.0.0_Windows_x64.exe](https://github.com/omerorucu/habitus/releases/latest)**
+1. Download **HABITUS_Setup_v1.0.0_Windows_x64.exe** from the release page
 2. Run the installer — no Python required
 3. Launch **HABITUS** from the Start Menu or Desktop shortcut
 
@@ -88,7 +88,7 @@ All analyses are performed within a single graphical user interface. The applica
 
 ### macOS — DMG
 
-1. Download **HABITUS_Setup_v1.0.0_macOS.dmg** from the [latest release](https://github.com/omerorucu/habitus/releases/latest)
+1. Download **HABITUS_Setup_v1.0.0_macOS.dmg** from the release page
 2. Open the DMG and drag **HABITUS.app** into `Applications`
 3. First launch: right-click → **Open** → **Open** (bypasses Gatekeeper)
 
@@ -98,12 +98,11 @@ All analyses are performed within a single graphical user interface. The applica
 
 ```bash
 # AppImage (portable, recommended)
-wget https://github.com/omerorucu/habitus/releases/latest/download/HABITUS_v1.0.0_x86_64.AppImage
 chmod +x HABITUS_v1.0.0_x86_64.AppImage
 ./HABITUS_v1.0.0_x86_64.AppImage
 
 # tar.gz archive
-wget https://github.com/omerorucu/habitus/releases/latest/download/HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
+# Download HABITUS_Setup_v1.0.0_Linux_x64.tar.gz from the release page
 tar -xzf HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
 cd HABITUS && ./HABITUS
 ```
@@ -115,7 +114,7 @@ cd HABITUS && ./HABITUS
 ```bash
 pip install PyQt6 matplotlib rasterio numpy pandas scipy scikit-learn pyproj
 pip install xgboost lightgbm catboost pygam elapid   # optional algorithms
-git clone https://github.com/omerorucu/habitus.git
+git clone [repository URL removed for peer review]
 cd habitus
 python main.py
 ```
@@ -132,7 +131,7 @@ python main.py
 
 ## Sample Data
 
-Download **[habitus_sample.zip](https://github.com/omerorucu/habitus/releases/latest/download/habitus_sample.zip)** (~43 MB) to test HABITUS with a complete dataset:
+Download **habitus_sample.zip** (~43 MB) from the release page to test HABITUS with a complete dataset:
 
 | Component | Description |
 |-----------|-------------|
