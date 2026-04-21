@@ -2,12 +2,8 @@
 
 **Habitat Analysis and Biodiversity Integrated Toolkit for Unified Species Distribution Modelling (SDM)**
 
-[![Release](https://img.shields.io/github/v/release/omerorucu/habitus)](https://github.com/omerorucu/habitus/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)](https://github.com/omerorucu/habitus/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE.txt)
 [![Python](https://img.shields.io/badge/python-3.11%2B-yellow)](https://www.python.org)
-[![macOS build](https://github.com/omerorucu/habitus/actions/workflows/build-macos.yml/badge.svg)](https://github.com/omerorucu/habitus/actions/workflows/build-macos.yml)
-[![Linux build](https://github.com/omerorucu/habitus/actions/workflows/build-linux.yml/badge.svg)](https://github.com/omerorucu/habitus/actions/workflows/build-linux.yml)
 
 ---
 
@@ -82,7 +78,6 @@ All analyses are performed within a single graphical user interface. The applica
 
 ### Windows — Installer
 
-1. Download **[HABITUS_Setup_v1.0.0_Windows_x64.exe](https://github.com/omerorucu/habitus/releases/latest)**
 2. Run the installer — no Python required
 3. Launch **HABITUS** from the Start Menu or Desktop shortcut
 
@@ -92,7 +87,6 @@ All analyses are performed within a single graphical user interface. The applica
 
 ### macOS — DMG
 
-1. Download **HABITUS_Setup_v1.0.0_macOS.dmg** from the [latest release](https://github.com/omerorucu/habitus/releases/latest)
 2. Open the DMG and drag **HABITUS.app** into `Applications`
 3. First launch: right-click → **Open** → **Open** (bypasses Gatekeeper)
 
@@ -102,12 +96,10 @@ All analyses are performed within a single graphical user interface. The applica
 
 ```bash
 # AppImage (portable, recommended)
-wget https://github.com/omerorucu/habitus/releases/latest/download/HABITUS_v1.0.0_x86_64.AppImage
 chmod +x HABITUS_v1.0.0_x86_64.AppImage
 ./HABITUS_v1.0.0_x86_64.AppImage
 
 # tar.gz archive
-wget https://github.com/omerorucu/habitus/releases/latest/download/HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
 tar -xzf HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
 cd HABITUS && ./HABITUS
 ```
@@ -119,7 +111,6 @@ cd HABITUS && ./HABITUS
 ```bash
 pip install PyQt6 matplotlib rasterio numpy pandas scipy scikit-learn pyproj
 pip install xgboost lightgbm catboost pygam elapid   # optional algorithms
-git clone https://github.com/omerorucu/habitus.git
 cd habitus
 python main.py
 ```
@@ -136,7 +127,6 @@ python main.py
 
 ## Sample Data
 
-Download **[habitus_sample.zip](https://github.com/omerorucu/habitus/releases/latest/download/habitus_sample.zip)** (~43 MB) to test HABITUS with a complete dataset:
 
 | Component | Description |
 |-----------|-------------|
@@ -264,7 +254,6 @@ MIT License — see [LICENSE.txt](LICENSE.txt) for details.
 
 **Ö. K. Örücü & S. Örücü**
 Süleyman Demirel University
-[github.com/omerorucu/habitus](https://github.com/omerorucu/habitus)
 
 ---
 
