@@ -78,6 +78,7 @@ All analyses are performed within a single graphical user interface. The applica
 
 ### Windows — Installer
 
+1. Download **[HABITUS_Setup_v1.0.0_Windows_x64.exe](https://github.com/omerorucu/habitus/releases/latest)**
 2. Run the installer — no Python required
 3. Launch **HABITUS** from the Start Menu or Desktop shortcut
 
@@ -87,6 +88,7 @@ All analyses are performed within a single graphical user interface. The applica
 
 ### macOS — DMG
 
+1. Download **HABITUS_Setup_v1.0.0_macOS.dmg** from the [latest release](https://github.com/omerorucu/habitus/releases/latest)
 2. Open the DMG and drag **HABITUS.app** into `Applications`
 3. First launch: right-click → **Open** → **Open** (bypasses Gatekeeper)
 
@@ -96,10 +98,12 @@ All analyses are performed within a single graphical user interface. The applica
 
 ```bash
 # AppImage (portable, recommended)
+wget https://github.com/omerorucu/habitus/releases/latest/download/HABITUS_v1.0.0_x86_64.AppImage
 chmod +x HABITUS_v1.0.0_x86_64.AppImage
 ./HABITUS_v1.0.0_x86_64.AppImage
 
 # tar.gz archive
+wget https://github.com/omerorucu/habitus/releases/latest/download/HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
 tar -xzf HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
 cd HABITUS && ./HABITUS
 ```
@@ -111,6 +115,7 @@ cd HABITUS && ./HABITUS
 ```bash
 pip install PyQt6 matplotlib rasterio numpy pandas scipy scikit-learn pyproj
 pip install xgboost lightgbm catboost pygam elapid   # optional algorithms
+git clone https://github.com/omerorucu/habitus.git
 cd habitus
 python main.py
 ```
@@ -127,6 +132,7 @@ python main.py
 
 ## Sample Data
 
+Download **[habitus_sample.zip](https://github.com/omerorucu/habitus/releases/latest/download/habitus_sample.zip)** (~43 MB) to test HABITUS with a complete dataset:
 
 | Component | Description |
 |-----------|-------------|
@@ -208,16 +214,16 @@ python main.py
 ## Citation
 
 ```
-Örücü, Ö. K., & Örücü, S. (2026). HABITUS: Habitat Analysis and Biodiversity
+[Authors removed for peer review] (2026). HABITUS: Habitat Analysis and Biodiversity
 Integrated Toolkit for Unified Species Distribution Modelling. Ecological
-Perspective, [Technical Report]. https://doi.org/10.53463/ecopers.20260435
+Perspective, [Technical Report]. [DOI removed for peer review]
 ```
 
 ---
 
 ## Development Note
 
-AI-assisted coding tools (Claude Code, Anthropic) were used during software development to support code implementation and optimisation. The conceptual framework, algorithm design, and validation were fully developed and verified by the developers.
+AI-assisted coding tools were used during software development to support code implementation and optimisation. The conceptual framework, algorithm design, and validation were fully developed and verified by the developers.
 
 ---
 
@@ -252,9 +258,6 @@ MIT License — see [LICENSE.txt](LICENSE.txt) for details.
 
 ## Developers
 
-**Ö. K. Örücü & S. Örücü**
-Süleyman Demirel University
+[Authors removed for peer review]
 
 ---
-
-*In loving memory of Nevin Örücü*
