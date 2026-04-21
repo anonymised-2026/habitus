@@ -716,22 +716,21 @@ EN_ABOUT = _ABOUT_CSS + """
   {UPDATE_BANNER}
 
   <h2>Developers</h2>
-  <div class="row"><span class="lbl">Authors :</span><span class="val">&Ouml;. K. &Ouml;r&uuml;c&uuml; &amp; S. &Ouml;r&uuml;c&uuml;</span></div>
-  <div class="row"><span class="lbl">Institution :</span><span class="val">S&uuml;leyman Demirel University</span></div>
+  <div class="row"><span class="lbl">Authors :</span><span class="val">[Removed for peer review]</span></div>
+  <div class="row"><span class="lbl">Institution :</span><span class="val">[Removed for peer review]</span></div>
   <div class="row"><span class="lbl">Year :</span><span class="val">2026</span></div>
   <div class="row"><span class="lbl">Platform :</span><span class="val">Windows / macOS / Linux &mdash; Standalone Desktop</span></div>
-  <div class="row"><span class="lbl">GitHub :</span><span class="val"><a href="https://github.com/omerorucu/habitus">github.com/omerorucu/habitus</a></span></div>
 
   <h2>Citation</h2>
   <div style="background:#eef6f1;border-left:3px solid #3a8c60;padding:10px 14px;border-radius:4px;font-size:12px;color:#1c3328;line-height:1.7;">
-    &Ouml;r&uuml;c&uuml;, &Ouml;. K., &amp; &Ouml;r&uuml;c&uuml;, S. (2026). <b>HABITUS: Habitat Analysis and Biodiversity Integrated
+    [Authors removed for peer review] (2026). <b>HABITUS: Habitat Analysis and Biodiversity Integrated
     Toolkit for Unified Species Distribution Modelling.</b> <i>Ecological Perspective</i>, [Technical Report].
-    <a href="https://doi.org/10.53463/ecopers.20260435">https://doi.org/10.53463/ecopers.20260435</a>
+    [DOI removed for peer review]
   </div>
 
   <h2>License &amp; Source Code</h2>
   <div class="row"><span class="lbl">License :</span><span class="val">MIT License</span></div>
-  <div class="row"><span class="lbl">Source Code :</span><span class="val"><a href="https://github.com/omerorucu/habitus">github.com/omerorucu/habitus</a></span></div>
+  <div class="row"><span class="lbl">Source Code :</span><span class="val">[Removed for peer review]</span></div>
 
   <h2>Core Dependencies</h2>
   <div class="row"><span class="lbl">Interface :</span><span class="val">PyQt6</span></div>
@@ -741,20 +740,9 @@ EN_ABOUT = _ABOUT_CSS + """
 
   <div class="ai">
     <b>Development Note</b><br>
-    AI-assisted coding tools (<b>Claude Code, Anthropic</b>) were used during software development
+    AI-assisted coding tools were used during software development
     to support code implementation and optimization. The conceptual framework, algorithm design,
     and validation were fully developed and verified by the developers.
-  </div>
-
-  <div style="margin-top:18px; padding:14px 18px;
-              background:#fff8e7; border-left:4px solid #8a6d3b;
-              border-radius:0 6px 6px 0; text-align:center;
-              font-style:italic; color:#5c4a1a; font-size:12px;
-              line-height:1.7;">
-    In loving memory of <b>Nevin &Ouml;r&uuml;c&uuml;</b><br>
-    (&#9790; 14 September 2025)<br>
-    <span style="font-size:11px;">This software is dedicated to my mother,
-    whose unwavering love continues to inspire every line of this work.</span>
   </div>
 </div>
 """
