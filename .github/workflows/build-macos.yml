@@ -1,0 +1,59 @@
+name: Build macOS Application
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install create-dmg
+        run: brew install create-dmg
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyinstaller pillow
+          python -m pip install PyQt6 matplotlib rasterio numpy pandas scipy scikit-learn pyproj
+          python -m pip install xgboost lightgbm pygam elapid geopandas shapely
+          python -m pip install catboost || echo "catboost not available on macOS-arm64"
+
+      - name: Run PyInstaller
+        run: python -m PyInstaller habitus.spec --clean -y
+
+      - name: Show build output
+        run: ls -la dist/
+
+      - name: Create .app bundle wrapper
+        run: bash scripts/make_macos_app.sh
+
+      - name: Create .dmg
+        run: bash scripts/make_macos_dmg.sh
+
+      - name: Upload DMG as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HABITUS-macOS
+          path: '*.dmg'
+          if-no-files-found: warn
+
+      - name: Attach DMG to release (if tag)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: '*.dmg'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
