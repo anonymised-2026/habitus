@@ -1,0 +1,37 @@
+# PyInstaller build output
+build/
+dist/
+installer/Output/
+*.spec.bak
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Test data (keep only sample data if any)
+# data/
+
+# Temporary
+*.tmp
+*.bak
