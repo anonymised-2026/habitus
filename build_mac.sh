@@ -23,7 +23,8 @@ python3 -m pip install catboost || echo "catboost skipped (no arm wheel)"
 python3 -m PyInstaller habitus.spec --clean -y
 
 # 3. Wrap into .app if needed
-VERSION=$(python3 -c "from habitus.version import APP_VERSION; print(APP_VERSION)")
+VERSION=$(grep -oE 'APP_VERSION[[:space:]]*=[[:space:]]*"[^"]+"' version.py | head -1 | grep -oE '"[^"]+"' | tr -d '"')
+: ${VERSION:="1.0.0"}
 APP_PATH="dist/HABITUS.app"
 
 if [ ! -d "$APP_PATH" ]; then
