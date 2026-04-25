@@ -92,7 +92,7 @@ All analyses are performed within a single graphical user interface. The applica
 2. Open the DMG and drag **HABITUS.app** into `Applications`
 3. First launch: right-click → **Open** → **Open** (bypasses Gatekeeper)
 
-**Requirements:** macOS 11 (Big Sur) or later, Apple Silicon or Intel.
+**Requirements:** macOS 11 (Big Sur) or later, Apple Silicon (arm64). Intel Mac users should build from source — see below.
 
 ### Linux — AppImage or tar.gz
 
@@ -112,10 +112,29 @@ cd HABITUS && ./HABITUS
 ### Run from source
 
 ```bash
+git clone https://github.com/anonymised-2026/habitus.git
+cd habitus
 pip install PyQt6 matplotlib rasterio numpy pandas scipy scikit-learn pyproj
 pip install xgboost lightgbm catboost pygam elapid   # optional algorithms
-git clone [repository URL removed for peer review]
+python main.py
+```
+
+#### macOS — Run from source
+
+```bash
+git clone https://github.com/anonymised-2026/habitus.git
 cd habitus
+pip install PyQt6 matplotlib rasterio numpy pandas scipy scikit-learn pyproj
+python main.py
+```
+
+**Apple Silicon (M1/M2/M3) note:** `rasterio` wheels on PyPI may fail on arm64 due to GDAL binary mismatches. If the install errors on `rasterio`, install it from conda-forge first:
+
+```bash
+conda create -n habitus python=3.11
+conda activate habitus
+conda install -c conda-forge rasterio gdal
+pip install PyQt6 matplotlib numpy pandas scipy scikit-learn pyproj
 python main.py
 ```
 
