@@ -7,8 +7,8 @@
 #define AppName      "HABITUS"
 #define AppVersion   "1.0"
 #define AppFullVer   "1.0.0"
-#define AppPublisher "Ö. K. Örücü & S. Örücü"
-#define AppURL       "https://github.com/omerorucu/habitus"
+#define AppPublisher "anonymised-2026"
+#define AppURL       "https://github.com/anonymised-2026/habitus"
 #define AppExeName   "HABITUS.exe"
 #define SourceDir    "dist\HABITUS"
 
