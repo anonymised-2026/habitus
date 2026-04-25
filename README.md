@@ -76,38 +76,66 @@ All analyses are performed within a single graphical user interface. The applica
 
 ## Installation
 
-### Windows — Installer
+All installers are attached to the [v1.0.0 release](https://github.com/anonymised-2026/habitus/releases/tag/v1.0.0). Pick the section for your operating system.
 
-1. Download **HABITUS_Setup_v1.0.0_Windows_x64.exe** from the release page
-2. Run the installer — no Python required
-3. Launch **HABITUS** from the Start Menu or Desktop shortcut
+### Windows — Installer (.exe)
 
-**Requirements:** Windows 10 / 11 (64-bit).
+**Requirements:** Windows 10 or 11 (64-bit).
 
-> **Windows SmartScreen:** Click **"More info"** → **"Run anyway"** to proceed.
+1. Download `HABITUS_Setup_v1.0.0_Windows_x64.exe` from the release page.
+2. Double-click the installer.
+3. **First-run SmartScreen warning:** click **"More info"** → **"Run anyway"** (the binary is unsigned during peer review).
+4. Follow the wizard (Next → Next → Install).
+5. Launch **HABITUS** from the Start Menu or Desktop shortcut.
 
-### macOS — DMG
+**Verify:** the main window opens with eight tabs (Data → … → Report).
 
-1. Download **HABITUS_Setup_v1.0.0_macOS.dmg** from the release page
-2. Open the DMG and drag **HABITUS.app** into `Applications`
-3. First launch: right-click → **Open** → **Open** (bypasses Gatekeeper)
+### macOS — Disk image (.dmg)
 
-**Requirements:** macOS 11 (Big Sur) or later, Apple Silicon (arm64). Intel Mac users should build from source — see below.
+**Requirements:** macOS 11 (Big Sur) or later, **Apple Silicon (arm64)**. Intel Mac users should build from source — see below.
+
+1. Download `HABITUS_Setup_v1.0.0_macOS.dmg` from the release page.
+2. Double-click the .dmg to mount it.
+3. Drag **HABITUS.app** onto the **Applications** shortcut. Eject the disk image.
+4. **First launch — bypass Gatekeeper (required once):**
+   - In `/Applications`, **right-click** (or Control-click) **HABITUS.app**.
+   - Choose **Open** from the menu.
+   - In the warning dialog, click **Open** again.
+
+   If no "Open" button is offered, run once in Terminal:
+   ```bash
+   xattr -dr com.apple.quarantine /Applications/HABITUS.app
+   ```
+   Then repeat the right-click → Open steps.
+
+5. From the second launch onward, normal double-click works.
+
+**Verify:** the main window opens with eight tabs.
 
 ### Linux — AppImage or tar.gz
 
+**Requirements:** Ubuntu 20.04+ / Debian 11+ / Fedora 36+ (64-bit).
+
+**Option A — AppImage (portable, recommended):**
 ```bash
-# AppImage (portable, recommended)
 chmod +x HABITUS_v1.0.0_x86_64.AppImage
 ./HABITUS_v1.0.0_x86_64.AppImage
-
-# tar.gz archive
-# Download HABITUS_Setup_v1.0.0_Linux_x64.tar.gz from the release page
-tar -xzf HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
-cd HABITUS && ./HABITUS
 ```
 
-**Requirements:** Ubuntu 20.04+ / Debian 11+ / Fedora 36+ (64-bit).
+**Option B — tar.gz archive:**
+```bash
+tar -xzf HABITUS_Setup_v1.0.0_Linux_x64.tar.gz
+cd HABITUS
+./HABITUS
+```
+
+**Verify:** the main window opens with eight tabs.
+
+If the AppImage refuses to start, install FUSE:
+```bash
+sudo apt install libfuse2          # Debian / Ubuntu
+sudo dnf install fuse-libs         # Fedora
+```
 
 ### Run from source
 
@@ -146,6 +174,18 @@ python main.py
 | macOS    | `./build_mac.sh` |
 | Linux    | `./build_linux.sh` |
 
+### Troubleshooting
+
+| Symptom | Fix |
+|---------|-----|
+| **macOS:** "HABITUS is damaged and cannot be opened" | `xattr -dr com.apple.quarantine /Applications/HABITUS.app`, then open again |
+| **macOS:** Double-click does nothing the first time | Use **right-click → Open** (Step 4 of the macOS section); only required once |
+| **macOS source build:** `ModuleNotFoundError: No module named 'habitus'` | Pull the latest `main` (fixed in commit `3ce6f99`); the script now reads `version.py` directly |
+| **Windows:** SmartScreen blocks the installer | Click **More info → Run anyway** (the binary is unsigned during peer review) |
+| **Linux:** AppImage exits immediately | `sudo apt install libfuse2` (or `fuse-libs` on Fedora) |
+| **All platforms:** `pip install rasterio` fails | Use conda-forge: `conda install -c conda-forge rasterio gdal` |
+| **Anywhere else** | Open an issue on GitHub with the OS, Python version, and the full error message |
+
 ---
 
 ## Sample Data
@@ -162,6 +202,19 @@ Download **habitus_sample.zip** (~43 MB) from the release page to test HABITUS w
 | **Climate model** | CNRM-ESM2-1 |
 | **Scenarios** | SSP1-2.6, SSP2-4.5, SSP3-7.0, SSP5-8.5 |
 | **Periods** | 2021-2040, 2041-2060, 2061-2080, 2081-2100 |
+
+### First-run quick test
+
+After installation, the fastest way to confirm a working setup is to run HABITUS against this dataset:
+
+1. Download `habitus_sample.zip` from the [v1.0.0 release](https://github.com/anonymised-2026/habitus/releases/tag/v1.0.0) (~43 MB) and unzip it anywhere.
+2. Launch HABITUS.
+3. **Tab 1 — Data:** load the unzipped occurrence CSV and the environmental rasters folder.
+4. **Tab 2 — Variables:** run VIF + correlation analysis.
+5. **Tab 3 — Models:** train (≈ 5–15 minutes on a typical laptop).
+6. **Tab 8 — Report:** export the 10-section HTML report.
+
+A complete walk-through is provided in `HABITUS_MANUAL_EN.md` (also attached to the release).
 
 ---
 
